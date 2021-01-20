@@ -1,0 +1,118 @@
+{
+    "name": "oem_4rgbc_tlsr8250_light4_sm726eb_user",
+    "description": "mesh rgbwcl online oem cfg",
+    "version": "1.0",
+    "ic":"tlsr825x",
+    "hardware":"TYBT3L",
+    "build":{
+        "log":"0",
+        "oem":"0",
+        "json_config":"0"
+    },
+    "directories": {
+        "bin": "../../sdk/DEBUG/light.bin",
+        "doc": "../../doc/",
+        "sdk": "../../sdk/",
+        "tools": "../../tools/"
+    },
+    "product":{
+        "kind":"sig_mesh_light",
+        "pid":"XXXXXXXX",
+        "vendorid":"1014",
+	    "power_reset_cnt":"5",
+        "power_reset_time":"5",
+        "power_reset_recover_time":"600",
+        "local_control":"0"
+    },
+    "modules":{
+        "light":{
+            "light_cfg_init_param_check":"0",
+            "light_cfg_prod_driver_need_init":"0",
+            "light_cfg_3in1_save":"0",
+            "light_cfg_remote_enable":"1",
+            "light_cfg_uart_enable":"0",
+
+			"Jsonver":"1.1.8",
+			"category":"1014",
+			"module":"BT3L",
+			"cmod":"rgbc",
+			"dmod":"2",
+            "cwtype":"0",
+            "onoffmode":"0",
+            "pmemory":"1",
+            "defcolor":"c",
+            "defbright":"100",
+            "deftemp":"100",
+            "cwmaxp":"100",
+            "brightmin":"10",
+            "brightmax":"100",
+            "colormin":"10",
+            "colormax":"100",
+            "wfcfg":"spcl_auto",
+            "rstmode":"0",
+            "rstnum":"3",
+            "remdmode":"0",
+            "rstcor":"c",
+            "rstbr":"50",
+            "rsttemp":"100",
+            "pmwhz":"1000",
+            "pairt":"6",
+            "prodagain":"0",
+            "cagt":"20",
+            "rgbt":"10",
+            "colorpfun":"0",
+            "colormaxp":"200",
+            "notdisturb":"0",
+            "c_pin":"2",
+			"c_lv":"1",
+            "iicr":"0",
+            "iicg":"1",
+            "iicb":"2",
+            "iicscl":"0",
+            "iicsda":"13",
+            "ctrl_pin":"12",
+			"ctrl_lv":"1",
+			"crc":"111"
+         }
+    },
+    "test":{
+        "gpio_test":{
+            "cases":[
+                {
+                    "pin_num":"8",
+                    "pin_array":"GPIO_PC2,GPIO_PC3,GPIO_PD2,GPIO_PB4,GPIO_PB5,GPIO_PC4,GPIO_PA0,GPIO_PC0",
+                    "pin_map":"2,2,1,3,3,1,4,4"
+                },
+				{
+					"pin_num":"7",
+					"pin_array":"GPIO_PB4,GPIO_PD2,GPIO_PC1,GPIO_PC2,GPIO_PC0,GPIO_PB5,GPIO_PC3",
+					"pin_map":"1,1,1,2,2,3,3"
+				},
+                {
+                    "pin_num":"6",
+                    "pin_array":"GPIO_PC4,GPIO_PD2,GPIO_PC3,GPIO_PC2,GPIO_PB5,GPIO_PB4",
+                    "pin_map":"1,1,2,2,3,3"
+                },
+                {
+                    "pin_num":"6",
+                    "pin_array":"GPIO_PD2,GPIO_PB5,GPIO_PC3,GPIO_PC2,GPIO_PC4,GPIO_PB4",
+                    "pin_map":"1,1,2,2,3,3"
+                },
+                {
+					"pin_num":"5",
+					"pin_array":"GPIO_PB5,GPIO_PC2,GPIO_PD2,GPIO_PB4,GPIO_PC3",
+					"pin_map":"2,1,1,2,1"
+                },
+                {
+					"pin_num":"3",
+					"pin_array":"GPIO_PB5,GPIO_PC2,GPIO_PC3",
+					"pin_map":"1,1,1"
+				}
+            ] 
+         }
+    },
+    "git":{
+        "link":"ssh://git@code.registry.wgine.com:10023/bluetooth/telink_826x_mesh_node.git",
+        "branch":"mesh_wifi_node_test"
+    }
+}
